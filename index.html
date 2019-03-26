@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
     <h1>JQuery Practice</h1>  
@@ -13,8 +14,34 @@
         <li>2</li>
         <li>3</li>
     </ul> 
-    <button>Press Me</button>
-    <button>Dont Press Me</button>
-    
+    <button class="press">Press Me</button>
+    <button class="dontPress">Dont Press Me</button>
+    <script>
+    $(document).ready(function(){
+        $('.press').click(function(){
+            alert("Yay, you pressed the right one")
+        })
+        $('.dontPress').click(function(){
+            alert("I told you not to press this one!!!")
+        });
+        $('.press').css('background', 'green');
+        $('.dontPress').css('background', 'red');
+        $('ul li:first').css({
+            'font-size': '25px',
+            'color': 'red',
+            'padding': '10px',
+        })
+        $('ul li:last').css({
+            'color': 'blue',
+            'font-size': '15px',
+            'padding': '10px',
+        })
+        $('ul li:nth-child(2)').css({
+            'color': 'purple',
+            'font-size': '20px',
+            'padding': '10px',
+        })
+    })
+    </script>
 </body>
 </html>
